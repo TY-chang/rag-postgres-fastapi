@@ -1,0 +1,11 @@
+title,description
+"Singleton Pattern","The Singleton Pattern ensures that a class has only one instance and provides a global point of access to that instance. It is commonly used in scenarios where only one object is needed to coordinate actions across the system."
+"Factory Method Pattern","The Factory Method Pattern defines an interface for creating objects but allows subclasses to alter the type of objects that will be created. It is often used in frameworks to allow for extensibility."
+"Observer Pattern","The Observer Pattern defines a one-to-many dependency between objects, so that when one object changes state, all its dependents are notified and updated automatically. It's often used in event handling systems."
+"Strategy Pattern","The Strategy Pattern allows the behavior of an object to be selected at runtime. It defines a family of algorithms, encapsulates each one, and makes them interchangeable within that family."
+"Decorator Pattern","The Decorator Pattern allows behavior to be added to an individual object, dynamically, without affecting the behavior of other objects from the same class. It is commonly used for enhancing features in a flexible manner."
+"Adapter Pattern","The Adapter Pattern allows incompatible interfaces to work together by converting the interface of a class into another interface the client expects. It’s often used to integrate legacy systems with new implementations."
+"Command Pattern","The Command Pattern encapsulates a request as an object, thereby allowing for parameterization of clients with queues, requests, and operations, and supports undoable operations."
+"Facade Pattern","The Facade Pattern provides a simplified interface to a complex subsystem, making it easier to interact with. It is often used to reduce dependencies between clients and underlying components."
+"Prototype Pattern","The Prototype Pattern is used to create new objects by copying an existing object, known as the prototype. This pattern is useful when object creation is expensive or complex."
+"Chain of Responsibility Pattern","The Chain of Responsibility Pattern passes a request along a chain of handlers. Each handler decides either to process the request or pass it along to the next handler in the chain."

@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "rag-demo"
+version = "0.1.0"
+description = ""
+authors = ["TY-Chang <feiteniepal@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+psycopg = "^3.2.1"
+pgvector = "^0.3.2"
+psycopg2-binary = "^2.9.9"
+openai = "^1.41.1"
+alembic = "^1.13.2"
+requests = "^2.32.3"
+notion = "^0.0.28"
+black = "^24.8.0"
+fastapi = {extras = ["standard"], version = "^0.112.2"}
+gunicorn = "^23.0.0"
+unicorn = "^2.1.1"
+uvicorn = "^0.31.1"
+pyaudio = "^0.2.14"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

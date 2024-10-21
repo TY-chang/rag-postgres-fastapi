@@ -1,0 +1,8 @@
+make_migration message="":
+    PYTHONPATH="$(pwd)/../src" python3 -m alembic revision -m "{{message}}"
+
+migrate:
+	PYTHONPATH="$(pwd)/../src" python3 -m alembic upgrade head
+
+downone:
+    PYTHONPATH="$(pwd)/../src" python3 -m alembic downgrade -1

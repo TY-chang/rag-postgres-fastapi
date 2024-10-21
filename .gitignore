@@ -1,0 +1,7 @@
+.python-version
+__pycache__
+.env
+.envrc
+.venv
+.vscode
+*.mp3

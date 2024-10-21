@@ -1,0 +1,23 @@
+FROM python:3.12-slim-bookworm
+
+ARG APP_PATH=/app
+#pip config
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+ENV PIP_NO_CACHE_DIR off
+ENV PIP_DISABLE_PIP_VERSION_CHECK on
+
+#poetry
+ENV POETRY_NO_INTERACTION 1
+
+#install poetry
+RUN pip install poetry
+COPY pyproject.toml poetry.lock ./
+RUN poetry install --no-root --no-interaction  && poetry show uvicorn
+
+ENV PYTHONPATH="${APP_PATH}"/src
+
+COPY ./src "${APP_PATH}"/src
+COPY ./migration "${APP_PATH}"/migration
+
+CMD ["poetry", "run","uvicorn", "app.src.interface.http_server:app", "--host", "0.0.0.0", "--port", "80"]

@@ -1,0 +1,24 @@
+FROM postgres:16
+
+# install dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    postgresql-server-dev-16 \
+    wget \
+    git \
+    locales
+
+#  en_US.UTF-8 locale
+RUN sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen && locale-gen en_US.UTF-8
+
+# 設置環境變量以使用正確的 locale
+ENV LANG=en_US.UTF-8 \
+    LANGUAGE=en_US:en \
+    LC_ALL=en_US.UTF-8
+
+# install pgvector 
+RUN git clone --branch v0.5.0 https://github.com/pgvector/pgvector.git /pgvector
+RUN cd /pgvector && make && make install
+
+# clean up
+RUN apt-get remove -y build-essential wget git && apt-get autoremove -y && apt-get clean
